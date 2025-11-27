@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DASC AI Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="tool-body">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-logo"><i class="fas fa-seedling"></i> DASC AI</div>
+        <div>
+            <a href="/" class="nav-link">Home</a>
+            <a href="#" class="nav-link" style="color: var(--primary);">Analysis Tool</a>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        
+        <!-- LEFT PANEL: INPUTS -->
+        <div class="panel">
+            <div class="panel-header">
+                <i class="fas fa-sliders-h"></i>
+                <h2>Input Parameters</h2>
+            </div>
+
+            <form id="predForm">
+                
+                <div class="divider-text"><i class="fas fa-flask"></i> Soil Composition</div>
+                <div class="form-grid">
+                    <div class="input-wrapper">
+                        <label>Nitrogen (N)</label>
+                        <input type="number" id="N" step="0.01" required placeholder="0.00">
+                    </div>
+                    <div class="input-wrapper">
+                        <label>Phosphorus (P)</label>
+                        <input type="number" id="P" step="0.01" required placeholder="0.00">
+                    </div>
+                    <div class="input-wrapper">
+                        <label>Potassium (K)</label>
+                        <input type="number" id="K" step="0.01" required placeholder="0.00">
+                    </div>
+                    <div class="input-wrapper">
+                        <label>Organic Carbon (%)</label>
+                        <input type="number" id="OC" step="0.01" required placeholder="0.00">
+                    </div>
+                    <div class="input-wrapper">
+                        <label>Zinc (PPM)</label>
+                        <input type="number" id="Zinc" step="0.01" required placeholder="0.00">
+                    </div>
+                    <div class="input-wrapper">
+                        <label>Sulphur (PPM)</label>
+                        <input type="number" id="Sulphur" step="0.01" required placeholder="0.00">
+                    </div>
+                </div>
+
+                <div class="divider-text" style="margin-top: 30px;"><i class="fas fa-cloud"></i> Atmospheric Data</div>
+                <div class="form-grid">
+                    <div class="input-wrapper">
+                        <label>Temperature (°C)</label>
+                        <input type="number" id="Temp" step="0.1" required placeholder="25.0">
+                    </div>
+                    <div class="input-wrapper">
+                        <label>Humidity (%)</label>
+                        <input type="number" id="Humidity" step="0.1" required placeholder="80.0">
+                    </div>
+                    <div class="input-wrapper">
+                        <label>pH Level</label>
+                        <input type="number" id="pH" step="0.1" required placeholder="6.5">
+                    </div>
+                    <div class="input-wrapper">
+                        <label>Rainfall (mm)</label>
+                        <input type="number" id="Rainfall" step="0.1" required placeholder="200.0">
+                    </div>
+                </div>
+
+                <button type="submit" class="predict-btn" id="submitBtn">
+                    Run Analysis <span id="spinner"></span>
+                </button>
+            </form>
+        </div>
+
+        <!-- RIGHT PANEL: RESULTS -->
+        <div class="panel">
+            <div class="panel-header">
+                <i class="fas fa-chart-pie"></i>
+                <h2>Analysis Report</h2>
+            </div>
+
+            <!-- Initial State -->
+            <div id="resultsPlaceholder" class="results-placeholder">
+                <i class="fas fa-microscope" style="font-size: 4rem; margin-bottom: 20px; opacity: 0.3;"></i>
+                <p>Waiting for data input...</p>
+                <p style="font-size: 0.8rem; opacity: 0.5;">Enter parameters on the left to generate the DASC AI Report.</p>
+            </div>
+
+            <!-- Active Results State -->
+            <div id="resultsContent" class="results-content">
+                
+                <div class="crop-card">
+                    <div style="position: relative; z-index: 1;">
+                        <span style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; opacity: 0.8;">Optimal Crop</span>
+                        <h1 class="crop-name" id="cropResult">--</h1>
+                        <div style="background: rgba(255,255,255,0.2); display: inline-block; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem;">
+                            <i class="fas fa-check-circle"></i> High Confidence
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider-text" style="color: var(--primary);"><i class="fas fa-vial"></i> Fertilizer / Nutrient Plan</div>
+                
+                <div class="stat-grid" id="regGrid">
+                    <!-- JS Injects here -->
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

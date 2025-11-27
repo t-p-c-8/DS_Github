@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DASC AI - Future of Farming</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-logo"><i class="fas fa-seedling"></i> DASC AI</div>
+        <div>
+            <a href="/tool" class="cta-btn" style="padding: 10px 25px; font-size: 0.9rem;">Launch Tool</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1>DASC AI</h1>
+            <p>Data-Driven Agricultural & Soil Intelligence System</p>
+            <a href="/tool" class="cta-btn">Analyze My Soil <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <!-- Features Section (Dark Theme) -->
+    <div style="background: var(--secondary); padding: 80px 20px; text-align: center; color: white;">
+        <h2 style="color: var(--primary); margin-bottom: 60px; font-size: 2.5rem;">System Capabilities</h2>
+        <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+            
+            <div style="max-width: 350px; background: rgba(255,255,255,0.05); padding: 30px; border-radius: 20px;">
+                <i class="fas fa-dna" style="font-size: 3rem; color: var(--accent); margin-bottom: 20px;"></i>
+                <h3>Precision Analysis</h3>
+                <p style="color: #b0bec5;">Process complex soil variables (N, P, K, Organic Carbon) to determine exact fertility levels.</p>
+            </div>
+
+            <div style="max-width: 350px; background: rgba(255,255,255,0.05); padding: 30px; border-radius: 20px;">
+                <i class="fas fa-brain" style="font-size: 3rem; color: var(--primary); margin-bottom: 20px;"></i>
+                <h3>Dual-Core AI</h3>
+                <p style="color: #b0bec5;">Simultaneously runs Classification models for crop selection and Regression for nutrient dosing.</p>
+            </div>
+
+            <div style="max-width: 350px; background: rgba(255,255,255,0.05); padding: 30px; border-radius: 20px;">
+                <i class="fas fa-satellite-dish" style="font-size: 3rem; color: var(--accent); margin-bottom: 20px;"></i>
+                <h3>Real-time Logic</h3>
+                <p style="color: #b0bec5;">Instantaneous computing of atmospheric data to ensure recommendations match current climate.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background: #000; color: #555; padding: 20px; text-align: center; font-size: 0.8rem;">
+        <p>&copy; 2025 DASC AI Systems. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
