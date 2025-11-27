@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DASC AI - Future of Farming</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- FIX: Use standard path, not Python url_for -->
+    <link rel="stylesheet" href="static/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
@@ -14,7 +15,8 @@
     <nav class="navbar">
         <div class="nav-logo"><i class="fas fa-seedling"></i> DASC AI</div>
         <div>
-            <a href="/tool" class="cta-btn" style="padding: 10px 25px; font-size: 0.9rem;">Launch Tool</a>
+            <!-- FIX: Link to predict.html, not /tool -->
+            <a href="predict.html" class="cta-btn" style="padding: 10px 25px; font-size: 0.9rem;">Launch Tool</a>
         </div>
     </nav>
 
@@ -23,11 +25,11 @@
         <div class="hero-content">
             <h1>DASC AI</h1>
             <p>Data-Driven Agricultural & Soil Intelligence System</p>
-            <a href="/tool" class="cta-btn">Analyze My Soil <i class="fas fa-arrow-right"></i></a>
+            <a href="predict.html" class="cta-btn">Analyze My Soil <i class="fas fa-arrow-right"></i></a>
         </div>
     </div>
 
-    <!-- Features Section (Dark Theme) -->
+    <!-- Features Section -->
     <div style="background: var(--secondary); padding: 80px 20px; text-align: center; color: white;">
         <h2 style="color: var(--primary); margin-bottom: 60px; font-size: 2.5rem;">System Capabilities</h2>
         <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">

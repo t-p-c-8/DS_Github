@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DASC AI Tool</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- FIX: Use standard path -->
+    <link rel="stylesheet" href="static/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -14,7 +15,8 @@
     <nav class="navbar">
         <div class="nav-logo"><i class="fas fa-seedling"></i> DASC AI</div>
         <div>
-            <a href="/" class="nav-link">Home</a>
+            <!-- FIX: Link to index.html -->
+            <a href="index.html" class="nav-link">Home</a>
             <a href="#" class="nav-link" style="color: var(--primary);">Analysis Tool</a>
         </div>
     </nav>
@@ -91,16 +93,13 @@
                 <h2>Analysis Report</h2>
             </div>
 
-            <!-- Initial State -->
             <div id="resultsPlaceholder" class="results-placeholder">
                 <i class="fas fa-microscope" style="font-size: 4rem; margin-bottom: 20px; opacity: 0.3;"></i>
                 <p>Waiting for data input...</p>
                 <p style="font-size: 0.8rem; opacity: 0.5;">Enter parameters on the left to generate the DASC AI Report.</p>
             </div>
 
-            <!-- Active Results State -->
             <div id="resultsContent" class="results-content">
-                
                 <div class="crop-card">
                     <div style="position: relative; z-index: 1;">
                         <span style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; opacity: 0.8;">Optimal Crop</span>
@@ -110,18 +109,13 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="divider-text" style="color: var(--primary);"><i class="fas fa-vial"></i> Fertilizer / Nutrient Plan</div>
-                
-                <div class="stat-grid" id="regGrid">
-                    <!-- JS Injects here -->
-                </div>
-
+                <div class="stat-grid" id="regGrid"></div>
             </div>
         </div>
-
     </div>
 
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <!-- FIX: Use standard path -->
+    <script src="static/script.js"></script>
 </body>
 </html>
